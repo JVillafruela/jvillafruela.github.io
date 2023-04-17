@@ -1,5 +1,5 @@
 % Adresses dans OpenStreetMap
-% Michel & Jérôme
+% Jérôme (colargol) & Michel (chimel38)
 % 17 avril 2023
 
 # Adresse
@@ -36,7 +36,7 @@
 
 - sur la rue
 - sur le bâtiment
-- cas des CIDEX
+- cas des [CIDEX](https://fr.wikipedia.org/wiki/Adresse_postale#CIDEX){target="_blank"}
 - [Schéma de Charlieu](https://wiki.openstreetmap.org/wiki/Le_Sch%C3%A9ma_de_Charlieu_:_une_proposition_autour_des_adresses){target="_blank"}
 
 ::: notes
@@ -118,7 +118,7 @@ Depuis la loi 3DS de février 2022, chaque commune se doit, de créer, vérifier
 
 [Que va changer la loi 3DS pour les communes sur leurs adresses ?](https://adresse.data.gouv.fr/blog/que-va-changer-la-loi3ds-pour-les-communes-sur-leur-adresse){target="_blank"}
 
-[Démo de l'outil "mes adresseses"](https://mes-adresses.data.gouv.fr/new?demo=1){target="_blank"}
+[Démo de l'outil "mes adresses"](https://mes-adresses.data.gouv.fr/new?demo=1){target="_blank"}
 
 
 ------------------
@@ -183,11 +183,17 @@ Constituée en réponse à la BANO en associant LaPoste, l’IGN, Etalab et OSM 
 
 ## Crédits
 
-[Photo de la plaque de rue Jérôme Dulaar](https://commons.wikimedia.org/wiki/File:Lyon_4e_-_Rue_J%C3%A9r%C3%B4me_Dulaar_-_Plaque_ancienne_rue_Sibille_Bergeon_(crop).jpg) : Romain Behar crop by Jérôme Villafruela - CC0
+[Photo de la plaque de rue Jérôme Dulaar](https://commons.wikimedia.org/wiki/File:Lyon_4e_-_Rue_J%C3%A9r%C3%B4me_Dulaar_-_Plaque_ancienne_rue_Sibille_Bergeon_(crop).jpg) : Romain Behar et Jérôme Villafruela - CC0
 
-[Présentation en ligne](https://jvillafruela.github.io/presentation-adresses-osm/adresses-osm.html)
+### Présentation 
 
-[Sources de la présentation](https://github.com/JVillafruela/jvillafruela.github.io/presentation-adresses-osm/)
+[Présentation en ligne sur https://jvillafruela.github.io/](https://jvillafruela.github.io/presentation-adresses-osm/adresses-osm.html)
+
+[Sources](https://github.com/JVillafruela/jvillafruela.github.io/presentation-adresses-osm/)
+
+Licence [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/fr/)
+
+
 
 
 
