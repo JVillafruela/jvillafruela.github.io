@@ -41,6 +41,9 @@
 
 ::: notes
 Il n'y a pas de consensus sur ce que représente précisément une adresse dans OSM (ni ailleurs !) et à quoi elle se rapporte, cela peut être des éléments matériels (une entrée, un portail, une maison, un immeuble, une boite aux lettres) ou des éléments fonctionnels (une parcelle, une entreprise, un foyer, un domicile, une usine...). Il n'existe donc pas de schéma 1 adresse=1 foyer ou 1 adresse=1 domicile ou 1 adresse=1 commerce... Selon le service qui les utilise, l'adresse ne renverra pas aux mêmes objets, par exemple, les Finances Publiques se servent des adresses pour rattacher des foyers fiscaux tandis qu'un service comme La Poste va rapprocher les adresses à des lieux de livraisons comme une boite aux lettres ou une porte d'entrée. 
+
+Schéma de Charlieu : proposition pour distinguer les adresses physiques et les adresses de contact
+
 :::
 
 ------------------
