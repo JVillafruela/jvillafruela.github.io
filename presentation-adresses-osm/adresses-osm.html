@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Michel &amp; Jérôme">
+  <title>Adresses dans OpenStreetMap</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Adresses dans OpenStreetMap</h1>
+  <p class="author">Michel &amp; Jérôme</p>
+  <p class="date">17 avril 2023</p>
+</section>
+
+<section class="slide level0">
+
+<h1 id="adresse">Adresse</h1>
+</section>
+<section class="slide level0">
+
+<h2 id="en-france">En France</h2>
+<p><img data-src="images/Plaque_Rue_Jérôme_Dulaar_Lyon_4e.jpg"
+style="width:50.0%" /></p>
+<ul>
+<li>Nom de voie</li>
+<li>Numéro
+<ul>
+<li>côtés pairs / impairs</li>
+<li>métrique (ruralité)</li>
+</ul></li>
+<li>Code Postal</li>
+<li>Commune</li>
+</ul>
+<aside class="notes">
+<ul>
+<li>numérotation à l’initiative du maire</li>
+<li>cas de numéro zéro</li>
+<li>n° pairs et impairs sur un même côté. ex <a
+href="https://www.openstreetmap.org/?mlat=47.2109871&amp;mlon=-1.5579879&amp;zoom=13#map=19/47.21085/-1.55796">Allée
+de l’île Gloriette</a></li>
+</ul>
+</aside>
+</section>
+<section class="slide level0">
+
+<h2 id="dans-openstreetmap">Dans OpenStreetMap</h2>
+</section>
+<section class="slide level0">
+
+<h2 id="position-du-point-adresse">Position du point adresse</h2>
+<ul>
+<li>sur la rue</li>
+<li>sur le bâtiment</li>
+<li>cas des CIDEX</li>
+<li><a
+href="https://wiki.openstreetmap.org/wiki/Le_Sch%C3%A9ma_de_Charlieu_:_une_proposition_autour_des_adresses"
+target="_blank">Schéma de Charlieu</a></li>
+</ul>
+<aside class="notes">
+<p>Il n’y a pas de consensus sur ce que représente précisément une
+adresse dans OSM (ni ailleurs !) et à quoi elle se rapporte, cela peut
+être des éléments matériels (une entrée, un portail, une maison, un
+immeuble, une boite aux lettres) ou des éléments fonctionnels (une
+parcelle, une entreprise, un foyer, un domicile, une usine…). Il
+n’existe donc pas de schéma 1 adresse=1 foyer ou 1 adresse=1 domicile ou
+1 adresse=1 commerce… Selon le service qui les utilise, l’adresse ne
+renverra pas aux mêmes objets, par exemple, les Finances Publiques se
+servent des adresses pour rattacher des foyers fiscaux tandis qu’un
+service comme La Poste va rapprocher les adresses à des lieux de
+livraisons comme une boite aux lettres ou une porte d’entrée.</p>
+</aside>
+</section>
+<section class="slide level0">
+
+<h2 id="tags">Tags</h2>
+<p><a href="https://wiki.openstreetmap.org/wiki/FR:Key:addr:*"
+target="_blank">Point adresse (addr:)</a></p>
+<table>
+<thead>
+<tr class="header">
+<th>Item</th>
+<th>Clé</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>N° de rue</strong></td>
+<td>addr:housenumber</td>
+</tr>
+<tr class="even">
+<td><strong>Voie</strong></td>
+<td>addr:street</td>
+</tr>
+<tr class="odd">
+<td>Lieu-dit</td>
+<td>addr:hamlet</td>
+</tr>
+<tr class="even">
+<td>Code postal</td>
+<td>addr:postcode</td>
+</tr>
+<tr class="odd">
+<td>Commune</td>
+<td>addr:city</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>Les adresses se cartographient avec les étiquettes au préfixe <a
+href="https://wiki.openstreetmap.org/wiki/FR:Key:addr:*"
+target="_blank">addr:</a></p>
+</aside>
+</section>
+<section class="slide level0">
+
+<p>Relation <a
+href="https://wiki.openstreetmap.org/wiki/FR:Relation:associatedStreet"
+target="_blank">“associated street”</a> - Tags</p>
+<table>
+<thead>
+<tr class="header">
+<th>Clé</th>
+<th>Valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>type</strong></td>
+<td>associatedStreet</td>
+</tr>
+<tr class="even">
+<td><strong>name</strong></td>
+<td>Nom de rue</td>
+</tr>
+<tr class="odd">
+<td>addr:suburb</td>
+<td>Nom du quartier</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>addr:street=* permet de lier une rue et ses addr:housenumber=* à
+partir de leur proximité spatiale, ce lien peut être mis en évidence à
+l’aide d’une relation type=associatedStreet.</p>
+</aside>
+</section>
+<section class="slide level0">
+
+<p>Relation <a
+href="https://wiki.openstreetmap.org/wiki/FR:Relation:associatedStreet"
+target="_blank">“associated street”</a> - Membres</p>
+<table>
+<thead>
+<tr class="header">
+<th>Chemin/nœud</th>
+<th>Rôle</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Chemin</td>
+<td>street</td>
+<td>La rue associée</td>
+</tr>
+<tr class="even">
+<td>Chemin/nœud</td>
+<td>house</td>
+<td>Numéros d’habitation</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>Cette méthode représente 5% d’adresses comparée à addr:street.</p>
+<p>La communauté est divisée sur l’usage de la relation. Un vote
+informel en 2015 a abouti à 49 votes favorables à sa dépréciation contre
+50.</p>
+</aside>
+</section>
+<section class="slide level0">
+
+<h1 id="données-publiques">Données publiques</h1>
+</section>
+<section class="slide level0">
+
+<h2 id="bano">BANO</h2>
+<p><strong>Base Adresse Nationale Ouverte</strong></p>
+<p>Initiée par OpenStreetMap France en 2014 en scrapant les adresses des
+planches cadastrales</p>
+</section>
+<section class="slide level0">
+
+<h2 id="bal">BAL</h2>
+<p><strong>Base Adresse Locale</strong></p>
+<p>Depuis la loi 3DS de février 2022, chaque commune se doit, de créer,
+vérifier et certifier sa propre base adresse.</p>
+<p><a
+href="https://adresse.data.gouv.fr/blog/que-va-changer-la-loi3ds-pour-les-communes-sur-leur-adresse"
+target="_blank">Que va changer la loi 3DS pour les communes sur leurs
+adresses ?</a></p>
+<p><a href="https://mes-adresses.data.gouv.fr/new?demo=1"
+target="_blank">Démo de l’outil “mes adresseses”</a></p>
+</section>
+<section class="slide level0">
+
+<h2 id="ban">BAN</h2>
+<p><strong>Base Adresse Nationale</strong></p>
+<p>Constituée en réponse à la BANO en associant LaPoste, l’IGN, Etalab
+et OSM France</p>
+<p><a href="https://adresse.data.gouv.fr/"
+target="_blank">https://adresse.data.gouv.fr/</a></p>
+<p><a href="https://www.cairn.info/revue-reseaux-2021-1-page-151.htm"
+target="_blank">Article sur l’historique de la BAN</a></p>
+<p><a
+href="https://ghost.adresse.data.gouv.fr/content/media/2022/06/Vide-oBANv6.mp4"
+target="_blank">La BAN, le film</a></p>
+</section>
+<section class="slide level0">
+
+<h1 id="intégration-dans-osm">Intégration dans OSM</h1>
+</section>
+<section class="slide level0">
+
+<p><a href="https://www.openstreetmap.org/user/LySioS/diary/400528"
+target="_blank">À partir d’une BAL</a></p>
+<p><a
+href="https://wiki.openstreetmap.org/wiki/Contribuer_%C3%A0_la_BANO"
+target="_blank">À partir de la BANO</a></p>
+</section>
+<section class="slide level0">
+
+<h2 id="liens">Liens</h2>
+<h3 id="wikipedia">Wikipedia</h3>
+<ul>
+<li><a href="https://fr.wikipedia.org/wiki/Adresse_postale">Adresse
+Postale (WP)</a></li>
+<li><a
+href="https://fr.wikipedia.org/wiki/Num%C3%A9rotation_des_immeubles">Numérotation
+des immeubles (WP)</a></li>
+<li><a href="https://wiki.openstreetmap.org/wiki/FR:Adresses">Adresses
+wiki OSM</a></li>
+</ul>
+</section>
+<section class="slide level0">
+
+<h2 id="liens-1">Liens</h2>
+<h3 id="wiki-openstreetmap">Wiki OpenStreetMap</h3>
+<ul>
+<li><a
+href="https://wiki.openstreetmap.org/wiki/FR:France/Base_Adresses_Nationale_Ouverte_(BANO)">BANO</a></li>
+<li><a
+href="https://wiki.openstreetmap.org/wiki/FR:Key:addr:*">Key:addr</a></li>
+<li>Relation <a
+href="https://wiki.openstreetmap.org/wiki/FR:Relation:associatedStreet">“associated
+street”</a></li>
+<li><a
+href="https://wiki.openstreetmap.org/wiki/Le_Sch%C3%A9ma_de_Charlieu_:_une_proposition_autour_des_adresses">Schéma
+de Charlieu</a></li>
+<li><a
+href="https://forum.openstreetmap.fr/t/adresses-des-poi-et-contact/7493">Adresses
+des POI et “contact:”</a></li>
+</ul>
+</section>
+<section class="slide level0">
+
+<h2 id="liens-2">Liens</h2>
+<h3 id="blogs">Blogs</h3>
+<ul>
+<li><a
+href="https://www.openstreetmap.org/user/LySioS/diary/400528">Adressage,
+trop d’la BAL ? (LySioS)</a></li>
+<li><a
+href="https://www.cairn.info/revue-reseaux-2021-1-page-151.htm">Historique
+de la BAN</a></li>
+</ul>
+</section>
+<section class="slide level0">
+
+<h2 id="crédits">Crédits</h2>
+<p><a
+href="https://commons.wikimedia.org/wiki/File:Lyon_4e_-_Rue_J%C3%A9r%C3%B4me_Dulaar_-_Plaque_ancienne_rue_Sibille_Bergeon_(crop).jpg">Photo
+de la plaque de rue Jérôme Dulaar</a> : Romain Behar crop by Jérôme
+Villafruela - CC0</p>
+<p><a
+href="https://jvillafruela.github.io/presentation-adresses-osm/adresses-osm.html">Présentation
+en ligne</a></p>
+<p><a
+href="https://github.com/JVillafruela/jvillafruela.github.io/presentation-adresses-osm/">Sources
+de la présentation</a></p>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
